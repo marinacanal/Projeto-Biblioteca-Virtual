@@ -14,9 +14,6 @@ Abaixo, será demonstrado algumas imagens sobre o projeto:
 ### Meu Perfil
 ![image](https://github.com/marinacanal/ProjetoBibliotecaVirtual/assets/121324624/31903b79-b171-4051-ac1f-9bd5d6330ff6)
 
-### Meus Livros
-![image](https://github.com/marinacanal/ProjetoBibliotecaVirtual/assets/121324624/4b763c01-2159-49e6-9524-5d4fcdf1355d)
-
 ### Cadastro de Livro
 ![image](https://github.com/marinacanal/ProjetoBibliotecaVirtual/assets/121324624/62538654-ae48-4840-b7c5-40f0154ec542)
 
