@@ -11,15 +11,12 @@ Abaixo, será demonstrado algumas imagens sobre o projeto:
 ### Página Incial
 ![image](https://github.com/marinacanal/ProjetoBibliotecaVirtual/assets/121324624/97a1a221-751f-4d23-b846-482073c0f9ef)
 
-### Meu Perfil
-![image](https://github.com/marinacanal/ProjetoBibliotecaVirtual/assets/121324624/31903b79-b171-4051-ac1f-9bd5d6330ff6)
-
 ### Cadastro de Livro
 ![image](https://github.com/marinacanal/ProjetoBibliotecaVirtual/assets/121324624/62538654-ae48-4840-b7c5-40f0154ec542)
+
+### Meu Perfil
+![image](https://github.com/marinacanal/ProjetoBibliotecaVirtual/assets/121324624/31903b79-b171-4051-ac1f-9bd5d6330ff6)
 
 Claro, há mais telas que apenas isso. Fizemos validações onde conseguimos (de e-mail e senha corretos na página de login), sendo em sua maioria, validação de campo para que não cadastre nenhuma informação nula no banco de dados.
 
 Qualquer dica é bem vinda, e agradecemos quem leu até aqui :)
-
-
-
