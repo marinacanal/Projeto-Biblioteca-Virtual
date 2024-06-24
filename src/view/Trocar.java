@@ -4,15 +4,9 @@
  */
 package view;
 
-import banco.ConexaoBanco;
-import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.util.ArrayList;
-import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import javax.swing.JOptionPane;
-import model.Livro;
 import model.Usuario;
 
 /**
@@ -34,8 +28,6 @@ public class Trocar extends javax.swing.JFrame {
         this.user = user;
     }
 
-    
-    
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -141,10 +133,8 @@ public class Trocar extends javax.swing.JFrame {
         //</editor-fold>
 
         /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new Trocar().setVisible(true);
-            }
+        java.awt.EventQueue.invokeLater(() -> {
+            new Trocar().setVisible(true);
         });
     }
 

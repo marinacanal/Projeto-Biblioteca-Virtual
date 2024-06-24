@@ -8,7 +8,7 @@ import view.Login;
 
 /**
  *
- * @author adris
+ * @author beatriz
  */
 public class ProjetoBiblioteca {
 
@@ -18,6 +18,5 @@ public class ProjetoBiblioteca {
     public static void main(String[] args) {
      Login lg = new Login();
      lg.setVisible(true);
-    }
-    
+    } 
 }

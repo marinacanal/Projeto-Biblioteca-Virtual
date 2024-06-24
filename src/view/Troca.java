@@ -5,13 +5,11 @@
 package view;
 
 import banco.ConexaoBanco;
-import java.lang.System.Logger;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.logging.Level;
-import javax.swing.JOptionPane;
 import model.Livro;
 import model.Usuario;
 
@@ -19,12 +17,13 @@ import model.Usuario;
  *
  * @author luis.santos6
  */
-public class Troca extends javax.swing.JFrame {
+public final class Troca extends javax.swing.JFrame {
 
      Usuario user = new Usuario();
-     List<Livro> listaLivros = new ArrayList<Livro>();
+     List<Livro> listaLivros = new ArrayList<>();
     /**
      * Creates new form MeusLivros
+     * @throws java.sql.SQLException
      */
     public Troca() throws SQLException {
         initComponents();
@@ -40,7 +39,7 @@ public class Troca extends javax.swing.JFrame {
     
     public void exibirLivros() throws SQLException {
         ConexaoBanco cDB = new ConexaoBanco();
-        listaLivros = new ArrayList<Livro>();
+        listaLivros = new ArrayList<>();
         ResultSet rs = cDB.buscarLivro(user.getId());
         while (rs.next()) {
             Livro ctn = new Livro();
@@ -58,16 +57,9 @@ public class Troca extends javax.swing.JFrame {
             tblLivros.setValueAt(listaLivros.get(i).getNumeroPaginas(), i, 2);
             tblLivros.setValueAt(listaLivros.get(i).getQuantidade(), i, 3);
             tblLivros.setValueAt(listaLivros.get(i).getCategoria(), i, 4);
-            tblLivros.setValueAt(listaLivros.get(i).getImagem(), i, 5);
-           
-            
-        }
-         
-        
+            tblLivros.setValueAt(listaLivros.get(i).getImagem(), i, 5);  
+        } 
     }
-    
-    
-
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -228,7 +220,6 @@ public class Troca extends javax.swing.JFrame {
          } catch (SQLException ex) {
              java.util.logging.Logger.getLogger(Troca.class.getName()).log(Level.SEVERE, null, ex);
          }
-       
         dispose();
     }//GEN-LAST:event_jButton1ActionPerformed
 
@@ -243,8 +234,6 @@ public class Troca extends javax.swing.JFrame {
         Trocar tr = new Trocar(user);
         tr.setVisible(true);
         dispose();
-
-       
     }//GEN-LAST:event_jButtonSelecActionPerformed
 
     /**
@@ -275,13 +264,11 @@ public class Troca extends javax.swing.JFrame {
         //</editor-fold>
 
         /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                try {
-                    new MeusLivros().setVisible(true);
-                } catch (SQLException ex) {
-                    java.util.logging.Logger.getLogger(MeusLivros.class.getName()).log(Level.SEVERE, null, ex);
-                }
+        java.awt.EventQueue.invokeLater(() -> {
+            try {
+                new MeusLivros().setVisible(true);
+            } catch (SQLException ex) {
+                java.util.logging.Logger.getLogger(MeusLivros.class.getName()).log(Level.SEVERE, null, ex);
             }
         });
     }

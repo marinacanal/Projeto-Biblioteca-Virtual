@@ -22,11 +22,10 @@ public class ConexaoBanco {
      * @param args the command line arguments
      */
     
-    
     //Conexão com o Banco de Dados
-    private final String url = "jdbc:postgresql://localhost/biblioteca";
+    private final String url = "jdbc:postgresql://localhost:5433/biblioteca";
     private final String us = "postgres";
-    private final String password = "senac23";
+    private final String password = "marina";
     private int chave;
     
     private Connection conn;
@@ -54,14 +53,12 @@ public class ConexaoBanco {
     public boolean loginUsuario(String email, String senha)throws SQLException {
          open();
             stmt = conn.createStatement();
-            rs = stmt.executeQuery("SELECT *from Usuario where email =" + "\'" + email + "\'" + "and senha = " + "\'" +senha + "\'");
+            rs = stmt.executeQuery("SELECT * from Usuario where email =" + "\'" + email + "\'" + "and senha = " + "\'" +senha + "\'");
          
-            return rs.next();
-        
-        
+            return rs.next();        
     }
     
-        public void close() {
+    public void close() {
         try {
             if (stmt != null) {
                 stmt.close();
@@ -106,7 +103,6 @@ public class ConexaoBanco {
             } else {
                 chave = -1;
             }
-            //chave = stmt.getGeneratedKeys().next().getInt(0);
             close();
         } catch (SQLException e) {
             // Fechando a conexão com o banco
@@ -166,7 +162,7 @@ public class ConexaoBanco {
         return null;
     }
     
-     public ResultSet buscarDadosUser(String email){
+    public ResultSet buscarDadosUser(String email){
         try{
             open();
             stmt = conn.createStatement();
@@ -175,9 +171,7 @@ public class ConexaoBanco {
         }
         catch(SQLException e){
             close();
-            e.printStackTrace();
-            
-            
+            e.printStackTrace();         
         }
         return null;
     }
@@ -186,7 +180,7 @@ public class ConexaoBanco {
         try{
             open();
             stmt = conn.createStatement();
-            rs = stmt.executeQuery("SELECT *from livro where usuario_idusuario =" + idusuario );
+            rs = stmt.executeQuery("SELECT * from livro where usuario_idusuario =" + idusuario );
             return rs;
         }
         catch(SQLException e){
@@ -201,7 +195,7 @@ public class ConexaoBanco {
         try{
             open();
             stmt = conn.createStatement();
-            rs = stmt.executeQuery("SELECT *from usuario where idusuario =" + idusuario );
+            rs = stmt.executeQuery("SELECT * from usuario where idusuario =" + idusuario );
             return rs;
         }
         catch(SQLException e){

@@ -6,7 +6,7 @@ package model;
 
 /**
  *
- * @author adris
+ * @author beatriz
  */
 public class Livro {
     private String Titulo;
@@ -20,10 +20,8 @@ public class Livro {
     public Livro(){
         
     }
-
-    
-     public Livro(String Titulo,String Autor, String NumeroPaginas,String Quantidade, String Categoria){
-        
+  
+    public Livro(String Titulo,String Autor, String NumeroPaginas,String Quantidade, String Categoria){       
         this.Titulo = Titulo;
         this.Autor = Autor;
         this.NumeroPaginas = NumeroPaginas;

@@ -4,8 +4,6 @@
  */
 package view;
 
-import model.Usuario;
-
 /**
  *
  * @author marina.canal
@@ -19,7 +17,6 @@ public class Vazio extends javax.swing.JFrame {
         initComponents();
     }
     
-
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -124,10 +121,8 @@ public class Vazio extends javax.swing.JFrame {
         //</editor-fold>
 
         /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new Vazio().setVisible(true);
-            }
+        java.awt.EventQueue.invokeLater(() -> {
+            new Vazio().setVisible(true);
         });
     }
 

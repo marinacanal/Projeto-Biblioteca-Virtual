@@ -6,17 +6,16 @@ package model;
 
 /**
  *
- * @author adris
+ * @author beatriz
  */
 public class Endereco {
     
     private String estado;
     private String cidade;
     private String bairro;
-    private String ref;
+    private String ref ;
     private String rua;
     private String mensagem;
-    private String idere;
     
     public Endereco(){
         

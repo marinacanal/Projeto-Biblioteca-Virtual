@@ -13,22 +13,16 @@ import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.ImageIcon;
-import javax.swing.JOptionPane;
-import javax.swing.table.DefaultTableModel;
 import model.Telas;
 import model.Usuario;
-import view.CadastroLivro;
-import view.CadastroLivro;
-import view.Endereco_Emp;
-import view.MeuPerfil;
 
 /**
  *
- * @author marin
+ * @author marina.canal
  */
-public class Interface extends javax.swing.JFrame {
+public final class Interface extends javax.swing.JFrame {
 
-    List<Telas> listaTela = new ArrayList<Telas>();
+    List<Telas> listaTela = new ArrayList<>();
     int posIni;
     ImageIcon imageIcon;
     String caminhoImagem;
@@ -36,6 +30,7 @@ public class Interface extends javax.swing.JFrame {
 
     /**
      * Creates new form Interface
+     * @throws java.sql.SQLException
      */
     public Interface() throws SQLException {
         initComponents();
@@ -51,7 +46,7 @@ public class Interface extends javax.swing.JFrame {
     
     public void exibirLivros() throws SQLException {
         ConexaoBanco BD = new ConexaoBanco();
-        listaTela = new ArrayList<Telas>();
+        listaTela = new ArrayList<>();
         ResultSet rs = BD.buscarId();
        
         while (rs.next()) {
@@ -65,7 +60,6 @@ public class Interface extends javax.swing.JFrame {
             
             listaTela.add(telas);
         }
-        //for (int i = 0; i < listaTela.size(); i++) {
         posIni = 0;
         jLabelNomeUs.setText(listaTela.get(posIni).getNome_Usuario());
         jLabelTit.setText(listaTela.get(posIni).getTitulo());
@@ -77,9 +71,9 @@ public class Interface extends javax.swing.JFrame {
         Image image = imageIcon.getImage().getScaledInstance(246, 250, java.awt.Image.SCALE_SMOOTH);
         imageIcon = new ImageIcon(image);
         jLabelImage.setIcon(imageIcon);
-    //} 
     }
 
+    @SuppressWarnings("empty-statement")
     public void exibirProximo() {
         posIni++;
         if (posIni < listaTela.size()) {
@@ -99,11 +93,10 @@ public class Interface extends javax.swing.JFrame {
         }
     }
 
+    @SuppressWarnings("empty-statement")
     public void exibirAnterior() {
         posIni--;
         if (posIni > 0) {
-            //while(posIni == 0) {
-            //posIni++;
             jLabelNomeUs.setText(listaTela.get(posIni).getNome_Usuario());
             jLabelTit.setText(listaTela.get(posIni).getTitulo());
             jLabelAut.setText(listaTela.get(posIni).getAutor());
@@ -118,7 +111,6 @@ public class Interface extends javax.swing.JFrame {
             Acabo2 a1 = new Acabo2();
             a1.setVisible(true);
         }
-        //}
     }
 
     /**
@@ -198,15 +190,19 @@ public class Interface extends javax.swing.JFrame {
         );
 
         jLabel1.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("Título:");
 
         jLabel2.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("Autor:");
 
         jLabel4.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(255, 255, 255));
         jLabel4.setText("Número de páginas:");
 
         jLabel6.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+        jLabel6.setForeground(new java.awt.Color(255, 255, 255));
         jLabel6.setText("Quantidade:");
 
         jButtonPegar.setBackground(new java.awt.Color(153, 102, 255));
@@ -387,7 +383,6 @@ public class Interface extends javax.swing.JFrame {
         CadastroLivro novoLivro = new CadastroLivro(user);
         novoLivro.setVisible(true);
         dispose();
-        // TODO add your handling code here:
     }//GEN-LAST:event_jButtonMaissActionPerformed
 
     private void jButtonTrocarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonTrocarActionPerformed
@@ -440,13 +435,11 @@ public class Interface extends javax.swing.JFrame {
         //</editor-fold>
 
         /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                try {
-                    new Interface().setVisible(true);
-                } catch (SQLException ex) {
-                    Logger.getLogger(Interface.class.getName()).log(Level.SEVERE, null, ex);
-                }
+        java.awt.EventQueue.invokeLater(() -> {
+            try {
+                new Interface().setVisible(true);
+            } catch (SQLException ex) {
+                Logger.getLogger(Interface.class.getName()).log(Level.SEVERE, null, ex);
             }
         });
     }

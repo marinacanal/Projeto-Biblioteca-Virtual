@@ -5,7 +5,6 @@
 package view;
 
 import banco.ConexaoBanco;
-import java.lang.System.Logger;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
@@ -18,12 +17,13 @@ import model.Usuario;
  *
  * @author luis.santos6
  */
-public class MeusLivros extends javax.swing.JFrame {
+public final class MeusLivros extends javax.swing.JFrame {
     Usuario user = new Usuario();
     
- List<Livro> listaLivros = new ArrayList<Livro>();
+ List<Livro> listaLivros = new ArrayList<>();
     /**
      * Creates new form MeusLivros
+     * @throws java.sql.SQLException
      */
     public MeusLivros() throws SQLException {
         initComponents();
@@ -38,7 +38,7 @@ public class MeusLivros extends javax.swing.JFrame {
     
     public void exibirLivros() throws SQLException {
         ConexaoBanco cDB = new ConexaoBanco();
-        listaLivros = new ArrayList<Livro>();
+        listaLivros = new ArrayList<>();
         ResultSet rs = cDB.buscarLivro(user.getId());
         while (rs.next()) {
             Livro ctn = new Livro();
@@ -56,24 +56,19 @@ public class MeusLivros extends javax.swing.JFrame {
             tblLivros.setValueAt(listaLivros.get(i).getNumeroPaginas(), i, 2);
             tblLivros.setValueAt(listaLivros.get(i).getQuantidade(), i, 3);
             tblLivros.setValueAt(listaLivros.get(i).getCategoria(), i, 4);
-            tblLivros.setValueAt(listaLivros.get(i).getImagem(), i, 5);
-           
-            
-        }
-         
-        
+            tblLivros.setValueAt(listaLivros.get(i).getImagem(), i, 5); 
+        }            
     }
     
     private void limparTabela() {
-            for (int i = 0; i < listaLivros.size(); i++) {
+        for (int i = 0; i < listaLivros.size(); i++) {
             tblLivros.setValueAt("", i, 0);
             tblLivros.setValueAt("", i, 1);
             tblLivros.setValueAt("", i, 2);
             tblLivros.setValueAt("", i, 3);
             tblLivros.setValueAt("", i, 4);
             tblLivros.setValueAt("", i, 5);
-           
-            }
+        }
     }
 
     /**
@@ -300,8 +295,7 @@ public class MeusLivros extends javax.swing.JFrame {
         li.setImagem(tblLivros.getModel().getValueAt(tblLivros.getSelectedRow(), 5).toString());
         CadastroLivro cv = new CadastroLivro(li, user);
         cv.setVisible(true);
-        dispose();
-       
+        dispose(); 
     }//GEN-LAST:event_jButtonAlterarActionPerformed
 
     private void jButtonExcluirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonExcluirActionPerformed
@@ -317,7 +311,7 @@ public class MeusLivros extends javax.swing.JFrame {
     }//GEN-LAST:event_jButtonExcluirActionPerformed
 
     private void jButtonCadActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonCadActionPerformed
-       
+      
         CadastroLivro ct = new CadastroLivro(user);
         ct.setVisible(true);
         dispose();
@@ -347,9 +341,7 @@ public class MeusLivros extends javax.swing.JFrame {
             tblLivros.setValueAt(listaLivros.get(i).getNumeroPaginas(), i, 2);
             tblLivros.setValueAt(listaLivros.get(i).getQuantidade(), i, 3);
             tblLivros.setValueAt(listaLivros.get(i).getCategoria(), i, 4);
-            tblLivros.setValueAt(listaLivros.get(i).getImagem(), i, 5);
-           
-            
+            tblLivros.setValueAt(listaLivros.get(i).getImagem(), i, 5);  
         }
     }//GEN-LAST:event_jButtonAtActionPerformed
 
@@ -381,13 +373,11 @@ public class MeusLivros extends javax.swing.JFrame {
         //</editor-fold>
 
         /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                try {
-                    new MeusLivros().setVisible(true);
-                } catch (SQLException ex) {
-                    java.util.logging.Logger.getLogger(MeusLivros.class.getName()).log(Level.SEVERE, null, ex);
-                }
+        java.awt.EventQueue.invokeLater(() -> {
+            try {
+                new MeusLivros().setVisible(true);
+            } catch (SQLException ex) {
+                java.util.logging.Logger.getLogger(MeusLivros.class.getName()).log(Level.SEVERE, null, ex);
             }
         });
     }
