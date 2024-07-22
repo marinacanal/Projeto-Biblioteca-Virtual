@@ -59,27 +59,27 @@ public class Endereco_Troca extends javax.swing.JFrame {
 
         jPanel1.setBackground(new java.awt.Color(204, 153, 255));
 
-        labelEstado.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
+        labelEstado.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         labelEstado.setForeground(new java.awt.Color(255, 255, 255));
         labelEstado.setText("Estado:");
 
-        labelCidade.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
+        labelCidade.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         labelCidade.setForeground(new java.awt.Color(255, 255, 255));
         labelCidade.setText("Cidade:");
 
-        labelBairro.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
+        labelBairro.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         labelBairro.setForeground(new java.awt.Color(255, 255, 255));
         labelBairro.setText("Bairro:");
 
-        labelRef.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
+        labelRef.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         labelRef.setForeground(new java.awt.Color(255, 255, 255));
         labelRef.setText("Referência:");
 
-        jLabel1.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Arial", 1, 16)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("Escolha um ponto de encontro público e de fácil acesso:");
 
-        jLabelRua.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
+        jLabelRua.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         jLabelRua.setForeground(new java.awt.Color(255, 255, 255));
         jLabelRua.setText("Rua:");
 
@@ -93,7 +93,7 @@ public class Endereco_Troca extends javax.swing.JFrame {
             }
         });
 
-        jLabel2.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
+        jLabel2.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("Mensagem:");
 
@@ -148,7 +148,7 @@ public class Endereco_Troca extends javax.swing.JFrame {
                                     .addComponent(campoRef)))
                             .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
                                 .addComponent(jLabel1)
-                                .addGap(0, 14, Short.MAX_VALUE)))))
+                                .addGap(0, 0, Short.MAX_VALUE)))))
                 .addGap(66, 66, 66))
         );
         jPanel1Layout.setVerticalGroup(
@@ -164,28 +164,28 @@ public class Endereco_Troca extends javax.swing.JFrame {
                 .addGap(34, 34, 34)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(labelEstado)
-                    .addComponent(jTextFieldEstado, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jTextFieldEstado, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(labelCidade)
-                    .addComponent(jTextFieldCidade, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jTextFieldCidade, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(labelBairro)
-                    .addComponent(campoBairro, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(campoBairro, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabelRua)
-                    .addComponent(jTextFieldRua, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jTextFieldRua, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(labelRef)
-                    .addComponent(campoRef, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(campoRef, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(11, 11, 11)
                         .addComponent(jLabel2))
                     .addComponent(jTextFieldMens, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(37, 37, 37)
-                .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(37, 37, 37))
+                .addGap(28, 28, 28)
+                .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(46, 46, 46))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
